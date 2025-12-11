@@ -25,11 +25,11 @@ def cli():
 
 @cli.command()
 @click.argument('user_story', required=False)  # ← Cambio 1: required=False
-@click.option('--file', '-f', 'file_path', type=click.Path(exists=True), help='Leer user story desde archivo')  # ← Cambio 2: Nueva opción
+@click.option('--file', '-f', 'file_path', type=click.Path(exists=True), help='Leer user story desde archivo') 
 @click.option('--output', '-o', default='tests', help='Directorio de salida')
-@click.option('--filename', 'output_filename', help='Nombre del archivo (auto si no se provee)')  # ← Cambio 3: renombrar a output_filename
+@click.option('--filename', 'output_filename', help='Nombre del archivo (auto si no se provee)') 
 @click.option('--show-gherkin', '-g', is_flag=True, help='Mostrar Gherkin generado')
-def generate(user_story, file_path, output, output_filename, show_gherkin):  # ← Cambio 4: agregar file_path y renombrar filename
+def generate(user_story, file_path, output, output_filename, show_gherkin):
     """
     Genera un test de Playwright desde una user story.
     
